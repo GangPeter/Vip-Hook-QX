@@ -2,9 +2,9 @@ var body = $response.body
 	//无感支付
 	//.replaceAll("authpost\":0", "authpost\":0")
 	//金额
-	.replaceAll("accmoneyr\":", "accmoneyr\":100000")
+	.replaceAll("accmoneyr\":-", "accmoneyr\":100000")
 	//赠送金额
-	.replaceAll("accmoneyg\":", "accmoneyg\":100000")
+	.replaceAll("accmoneyg\":-", "accmoneyg\":100000")
 	//orderid
 	//.replaceAll("orderid\":-2", "orderid\":31243")
 	//MQTTSend
