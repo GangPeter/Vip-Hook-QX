@@ -8,7 +8,7 @@ var body = $response.body
     //替换报错提醒
     //.replaceAll("S!=w.iOrderID", "S!=S")
     //替换页面转跳
-    .replaceAll("t.confirm?i.func_Apply():i.func_closewg()", "uni.navigateTo({url:\"../grxx/grxx\"})")
+    .replaceAll("url:\"../cz/cz\"", "this.func_toast(\"账号已销户拒绝3457547操作\")")
     //替换弹窗
     //.replaceAll("(console.log(\"接收数据：\",o)", "(console.log(\"接收数据：\",o),uni.showToast({title:\"设备4连接\"+o,icon:\"none\",duration:2e3}),")
 $done({ body });
