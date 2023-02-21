@@ -6,6 +6,7 @@ var body = $response.body
     .replaceAll("0==this.myUserInfo.authpost","0==1")
     .replaceAll("0==i.myUserInfo.authpost","0==1")
     //替换报错提醒
+.replaceAll("enableDebug:!1", "enableDebug: 1")
     .replaceAll("enableDebug: !1", "enableDebug: 1")
     //替换页面转跳
     //.replaceAll("url:\"../cz/cz\"", "this.func_toast(uni.getStorageSync(\"ISPDATA\"))")
