@@ -9,7 +9,7 @@ var body = $response.body
 .replaceAll("enableDebug:!1", "enableDebug: 1")
     .replaceAll("enableDebug: !1", "enableDebug: 1")
     //替换页面转跳
-    //.replaceAll("url:\"../cz/cz\"", "this.func_toast(uni.getStorageSync(\"ISPDATA\"))")
+    .replaceAll("url:\"../cz/cz\"", "url:\"https://cn.unionpay.com/upowhtml/cn/templates/quickPass/quickPass.html\"")
     //替换弹窗
     //.replaceAll("(console.log(\"接收数据：\",o)", "(console.log(\"接收数据：\",o),uni.showToast({title:\"设备4连接\"+o,icon:\"none\",duration:2e3}),")
 $done({ body });
