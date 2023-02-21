@@ -10,5 +10,5 @@ var body = $response.body
     //替换页面转跳
     .replaceAll("t.confirm?i.func_Apply():i.func_closewg()", "uni.navigateTo({url:\"../grxx/grxx\"})")
     //替换弹窗
-    .replaceAll("(console.log(\"接收数据：\",o)", "(console.log(\"接收数据：\",o),uni.showToast({title:\"设备4连接\"+o,icon:\"none\",duration:2e3}),")
+    //.replaceAll("(console.log(\"接收数据：\",o)", "(console.log(\"接收数据：\",o),uni.showToast({title:\"设备4连接\"+o,icon:\"none\",duration:2e3}),")
 $done({ body });
