@@ -7,7 +7,7 @@
 **************************************
 
 [rewrite_local]
-^https:\/\/api\.gongkaoleida\.com\/api\/(v\d+_\d+_\d+)\/user\/resume\/?(.*?)*$) url script-response-body https://raw.githubusercontent.com/GangPeter/Vip-Hook-QX/main/GkldVipHook.js
+^https:\/\/api\.gongkaoleida\.com\/api\/(v\d+_\d+_\d+)\/user\/resume\/?(.*?)*$ url script-response-body https://raw.githubusercontent.com/GangPeter/Vip-Hook-QX/main/GkldVipHook.js
 
 [mitm]
 hostname = api.gongkaoleida.com
