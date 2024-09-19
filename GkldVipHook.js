@@ -14,27 +14,25 @@ hostname = api.gongkaoleida.com
 
 *************************************/
 
-const newResp = {};
-const headers = $request.headers;
-const respBody = JSON.parse(typeof $response != "undefined" && $response.body || null);
+var body = $response.body;
+var bodyJson = JSON.parse(body);
 
-
-if (respBody && respBody.data) {
-    // VIP等级
-    respBody.data.userInfo.vipGrade = 2;
-    // VIP标识
-    respBody.data.userInfo.isVip = 1;
-    // VIP到期时间
-    const nowTime = Date.parse(new Date());
-    const vipExpire = Date.parse("2099/1/1 00:00:00");
-    respBody.data.userInfo.vipExpire = vipExpire;
-    for (let index = 0; index < array.length; index++) {
-        respBody.data.userInfo.vipGradeList[index].isVip = 1;
-        respBody.data.userInfo.vipGradeList[index].vipExpire = vipExpire;
-        respBody.data.userInfo.vipGradeList[index].remainDays = (vipExpire - nowTime) / (1 * 24 * 60 * 60 * 1000);
-    }
-    newResp.body = JSON.stringify(respBody);
-    console.log('已操作成功🎉🎉🎉');
+if (bodyJson) {
+	// VIP等级
+	bodyJson.data.userInfo.vipGrade = 2;
+	// VIP标识
+	bodyJson.data.userInfo.isVip = 1;
+	// VIP到期时间
+	const nowTime = Date.parse(new Date());
+	const vipExpire = Date.parse("2099/1/1 00:00:00");
+	bodyJson.data.userInfo.vipExpire = vipExpire;
+	for (let index = 0; index < array.length; index++) {
+		bodyJson.data.userInfo.vipGradeList[index].isVip = 1;
+		bodyJson.data.userInfo.vipGradeList[index].vipExpire = vipExpire;
+		bodyJson.data.userInfo.vipGradeList[index].remainDays = (vipExpire - nowTime) / (1 * 24 * 60 * 60 * 1000);
+	}
+	console.log("已操作成功🎉🎉🎉");
 }
 
-$done(newResp);
+body = JSON.stringify(bodyJson);
+$done({ body });
