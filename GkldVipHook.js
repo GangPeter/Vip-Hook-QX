@@ -26,7 +26,7 @@ if (bodyJson) {
 	const nowTime = Date.parse(new Date());
 	const vipExpire = Date.parse("2099/1/1 00:00:00");
 	bodyJson.data.userInfo.vipExpire = vipExpire;
-	for (let index = 0; index < array.length; index++) {
+	for (let index = 0; index < bodyJson.data.userInfo.vipGradeList.length; index++) {
 		bodyJson.data.userInfo.vipGradeList[index].isVip = 1;
 		bodyJson.data.userInfo.vipGradeList[index].vipExpire = vipExpire;
 		bodyJson.data.userInfo.vipGradeList[index].remainDays = (vipExpire - nowTime) / (1 * 24 * 60 * 60 * 1000);
